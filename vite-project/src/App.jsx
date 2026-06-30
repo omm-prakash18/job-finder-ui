@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header';
 import './App.css';
 import { FaAmazon, FaDribbble, FaAirbnb, FaApple, FaBookmark, FaRegBookmark } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
@@ -131,13 +132,16 @@ const JobCard = ({ job }) => {
 
 const App = () => {
   return (
-    <div className="app-container">
-      <div className="jobs-grid">
-        {jobs.map((job, index) => (
-          <JobCard key={index} job={job} />
-        ))}
+    <>
+      <Header />
+      <div className="app-container">
+        <div className="jobs-grid">
+          {jobs.map((job, index) => (
+            <JobCard key={index} job={job} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
